@@ -89,12 +89,30 @@ void insere()
 	novo->prox = NULL;
 
 
+	if (inicio == NULL) {
+		inicio = novo;
+		fim = novo;
+		cout << "Elemento " << novo->valor << " foi inserido na fila \n";
+	}
+	else {
+		fim->prox = novo;
+		fim = novo;
+		cout << "Elemento " << novo->valor << " foi inserido na fila \n";
+	}
+
+
 }
 
 void remove()
 {
-
-
+	if (inicio == NULL) {
+		cout << "Fila vazia \n";
+		return;
+	}
+	else{
+		cout << "O elemento " << inicio->valor << " saiu da fila \n";
+		inicio = inicio->prox;
+	}
 
 }
 
